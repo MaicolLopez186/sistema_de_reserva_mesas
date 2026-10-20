@@ -1,12 +1,1 @@
-Trabajo final Webapps y React 2026 - 2
-TRABAJO FINAL GRUPAL
-Sistema web de reservas de mesas para un restaurante
-Asignatura: Python + Django Webapps - React JS IA
-Modalidad: Proyecto grupal
-Valor comercial estimado del producto: $30.000.000 COP
-Tecnologías principales: Python, Django REST Framework, React JS y herramientas de inteligencia artificial.
-Objetivo general
-Diseñar y desarrollar una aplicación web para la gestión de reservas de mesas de un restaurante, utilizando Python y Django para el backend, React JS para el frontend y herramientas de inteligencia artificial como apoyo al proceso de desarrollo.
-El sistema deberá permitir a los clientes consultar la información del restaurante, verificar la disponibilidad de mesas y realizar, modificar o cancelar reservas. Además, deberá contar con un panel administrativo para gestionar mesas, horarios, reservas y clientes.
-El proyecto deberá aplicar buenas prácticas de desarrollo, control de versiones con Git y GitHub, validación de datos, seguridad y documentación técnica.
-
+Trabajo final Webapps y React 2026 - 2 TRABAJO FINAL GRUPAL Sistema web de reservas de mesas para un restaurante Asignatura: Python + Django Webapps - React JS IA Modalidad: Proyecto grupal Valor comercial estimado del producto: $30.000.000 COP Tecnologías principales: Python, Django REST Framework, React JS y herramientas de inteligencia artificial. Objetivo general Diseñar y desarrollar una aplicación web para la gestión de reservas de mesas de un restaurante, utilizando Python y Django para el backend, React JS para el frontend y herramientas de inteligencia artificial como apoyo al proceso de desarrollo. El sistema deberá permitir a los clientes consultar la información del restaurante, verificar la disponibilidad de mesas y realizar, modificar o cancelar reservas. Además, deberá contar con un panel administrativo para gestionar mesas, horarios, reservas y clientes. El proyecto deberá aplicar buenas prácticas de desarrollo, control de versiones con Git y GitHub, validación de datos, seguridad y documentación técnica.
