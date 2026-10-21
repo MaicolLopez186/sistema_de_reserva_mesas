@@ -3,9 +3,9 @@
 # PYTHON
 # ==========================================
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
-*.log
 
 # ==========================================
 # DJANGO - BASE DE DATOS LOCAL
