@@ -1,13 +1,20 @@
 from django.db import models
 
 class mesa(models.Model):
-   id_mesa = models.AutoField(primary_key=True)
-   numero_mesa = models.CharField(max_length=200)
-   ubicacion= models.CharField(max_length=150)
-   numero_sillas= models.CharField(max_length=150)
-   disponible= models.CharField(max_length=150)
-   
+    id_mesa = models.AutoField(primary_key=True)
+    # Pizarra: Num Mesa -> Integer
+    numero_mesa = models.IntegerField() 
     
-
-   def __str__(self):
-       return self.numero_mesa
+    # Pizarra: Ubicación -> String
+    ubicacion = models.CharField(max_length=150)
+    
+    # Pizarra: Num Sillas -> Integer
+    numero_sillas = models.IntegerField() 
+    
+    # Pizarra: Disponible -> Booleano
+    disponible = models.BooleanField(default=True) 
+    
+    def __str__(self):
+        # ⚠️ IMPORTANTE: Como numero_mesa ahora es un entero, 
+        # hay que convertirlo a string para que Django no de error.
+        return str(self.numero_mesa)
