@@ -3,9 +3,15 @@
 # PYTHON
 # ==========================================
 __pycache__/
+<<<<<<< HEAD
 **/__pycache__/
 *.py[cod]
 *$py.class
+=======
+*.py[cod]
+*$py.class
+*.log
+>>>>>>> main
 
 # ==========================================
 # DJANGO - BASE DE DATOS LOCAL
@@ -55,3 +61,8 @@ media/
 .idea/
 .DS_Store
 Thumbs.db
+
+
+# Excluir todas las carpetas de caché de Python
+**/__pycache__/
+*.py[cod]
