@@ -57,3 +57,6 @@ media/
 Thumbs.db
 
 
+# Excluir todas las carpetas de caché de Python
+**/__pycache__/
+*.py[cod]
