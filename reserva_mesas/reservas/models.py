@@ -5,7 +5,7 @@ class mesa(models.Model):
    numero_mesa = models.CharField(max_length=200)
    ubicacion= models.CharField(max_length=150)
    numero_sillas= models.CharField(max_length=150)
-   disponible= models.CharField(max_length=150)  
+   disponible= models.BooleanField(default=True)  
     
 
    def __str__(self):
