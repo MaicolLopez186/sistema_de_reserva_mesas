@@ -7,16 +7,16 @@ class mesa(models.Model):
    numero_sillas= models.CharField(max_length=150)
    disponible= models.CharField(max_length=150)  
     
-
    def __str__(self):
        return self.numero_mesa
 
 class cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
-    edad = models.IntegerField(max_length=50)
+    edad = models.IntegerField
     telefono = models.CharField(max_length=50)
     correo = models.CharField(max_length=200)
+    vip = models.BooleanField(default=False)
     
     def __str__(self):
         return self.nombre
