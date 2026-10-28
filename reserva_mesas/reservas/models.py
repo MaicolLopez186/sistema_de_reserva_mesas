@@ -13,7 +13,7 @@ class mesa(models.Model):
 class cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
-    edad = models.IntegerField
+    edad = models.PositiveIntegerField()
     telefono = models.CharField(max_length=50)
     correo = models.CharField(max_length=200)
     vip = models.BooleanField(default=False)
