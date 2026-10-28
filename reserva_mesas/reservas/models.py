@@ -9,7 +9,7 @@ class mesa(models.Model):
     
 
    def __str__(self):
-       return self.numero_mesa
+       return str(self.numero_mesa)
 
 class cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
