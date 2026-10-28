@@ -2,7 +2,7 @@ from django.db import models
 
 class mesa(models.Model):
    id_mesa = models.AutoField(primary_key=True)
-   numero_mesa = models.IntegerField()
+   numero_mesa = models.PositiveIntegerField()
    ubicacion= models.CharField(max_length=150)
    numero_sillas= models.CharField(max_length=150)
    disponible= models.CharField(max_length=150)  
