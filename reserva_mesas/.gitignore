@@ -3,15 +3,6 @@
 # PYTHON
 # ==========================================
 __pycache__/
-<<<<<<< HEAD
-**/__pycache__/
-*.py[cod]
-*$py.class
-=======
-*.py[cod]
-*$py.class
-*.log
->>>>>>> main
 
 # ==========================================
 # DJANGO - BASE DE DATOS LOCAL
