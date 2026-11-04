@@ -3,6 +3,9 @@
 # PYTHON
 # ==========================================
 __pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
 
 # ==========================================
 # DJANGO - BASE DE DATOS LOCAL
@@ -40,7 +43,7 @@ ENV/
 .ruff_cache/
 
 # ==========================================
-# ARCHIVOS GENERADOS
+# DJANGO - ARCHIVOS GENERADOS
 # ==========================================
 staticfiles/
 media/
@@ -52,8 +55,3 @@ media/
 .idea/
 .DS_Store
 Thumbs.db
-
-
-# Excluir todas las carpetas de caché de Python
-**/__pycache__/
-*.py[cod]
