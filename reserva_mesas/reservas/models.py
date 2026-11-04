@@ -8,6 +8,8 @@ class mesa(models.Model):
     ubicacion = models.CharField(max_length=150)
     numero_sillas = models.CharField(max_length=150)
     disponible = models.BooleanField(default=True)
+    tipo_mesa= models.CharField(max_length=150)
+    
 
     def __str__(self):
         return self.numero_mesa
