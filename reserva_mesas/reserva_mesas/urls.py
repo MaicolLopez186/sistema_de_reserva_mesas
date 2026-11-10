@@ -1,22 +1,11 @@
-"""
-URL configuration for reserva_mesas project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import RedirectView  # <-- Importamos esta vista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('mesas/', include('reservas.urls')),
+    
+    # Esta línea hace que la ruta vacía (la raíz) redirija a /mesas/
+    path('', RedirectView.as_view(url='/mesas/', permanent=True)), 
 ]

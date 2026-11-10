@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0"><i class="bi bi-info-circle"></i> Detalle de la Mesa</h4>
+                <span class="badge bg-light text-dark fs-6">{{ mesa.numero_mesa }}</span>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong><i class="bi bi-geo-alt-fill text-muted"></i> Ubicación:</strong> 
+                        <span>{{ mesa.ubicacion }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong><i class="bi bi-person-fill text-muted"></i> Sillas:</strong> 
+                        <span class="badge bg-secondary rounded-pill">{{ mesa.numero_sillas }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong><i class="bi bi-palette-fill text-muted"></i> Color:</strong> 
+                        <span>{{ mesa.color }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong><i class="bi bi-activity text-muted"></i> Estado:</strong> 
+                        {% if mesa.disponible %}
+                            <span class="badge bg-success">Disponible</span>
+                        {% else %}
+                            <span class="badge bg-danger">Ocupada</span>
+                        {% endif %}
+                    </li>
+                </ul>
+
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'mesa_list' %}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+                    <div>
+                        <a href="{% url 'mesa_update' mesa.pk %}" class="btn btn-warning">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        <a href="{% url 'mesa_delete' mesa.pk %}" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
