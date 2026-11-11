@@ -1,8 +1,11 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import mesa # Importamos tu modelo exacto
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 # 1. Visualización y Filtros (READ - List)
+@method_decorator(login_required, name='dispatch')
 class MesaListView(ListView):
     model = mesa
     template_name = 'mesas/mesa_list.html'
@@ -41,6 +44,7 @@ class MesaDetailView(DetailView):
     context_object_name = 'mesa'
 
 # 3. Crear (CREATE)
+@method_decorator(login_required, name='dispatch')
 class MesaCreateView(CreateView):
     model = mesa
     template_name = 'mesas/mesa_form.html'
@@ -60,3 +64,10 @@ class MesaDeleteView(DeleteView):
     model = mesa
     template_name = 'mesas/mesa_confirm_delete.html'
     success_url = reverse_lazy('mesa_list')
+
+# NUEVA VISTA PÚBLICA (Home)
+class HomeView(ListView):
+    model = mesa
+    template_name = 'home.html'
+    context_object_name = 'mesas'
+    # Queremos mostrar TODAS las mesas, pero puedes filtrar si lo deseas

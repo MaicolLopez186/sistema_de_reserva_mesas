@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center mb-5 mt-3">
+    <h1 class="fw-bold display-5">Bienvenido a nuestro Restaurante</h1>
+    <p class="lead text-muted">Consulta la disponibilidad de nuestras mesas en tiempo real.</p>
+</div>
+
+<!-- Cuadrícula de Mesas -->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for m in mesas %}
+    <div class="col">
+        <div class="card h-100 {% if not m.disponible %}opacity-50{% endif %} shadow-sm">
+            
+            <!-- Cabecera de la tarjeta con el color de la mesa -->
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="bi bi-table"></i> Mesa {{ m.numero_mesa }}</h5>
+                {% if m.disponible %}
+                    <span class="badge bg-success">Disponible</span>
+                {% else %}
+                    <span class="badge bg-danger">Ocupada</span>
+                {% endif %}
+            </div>
+
+            <div class="card-body">
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Ubicación:</strong> {{ m.ubicacion }}
+                    </li>
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-person-fill text-primary"></i> <strong>Sillas:</strong> {{ m.numero_sillas }}
+                    </li>
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-palette-fill text-primary"></i> <strong>Color:</strong> {{ m.color }}
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pie de la tarjeta (Botón para reservar) -->
+            <div class="card-footer bg-white border-top-0 text-center">
+                {% if m.disponible %}
+                    <!-- Este botón lo puedes dejar preparado para un futuro módulo de reservas -->
+                    <button class="btn btn-outline-success w-100">
+                        <i class="bi bi-calendar-check"></i> Reservar Mesa
+                    </button>
+                {% else %}
+                    <button class="btn btn-outline-secondary w-100" disabled>
+                        No disponible
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <!-- Mensaje por si no hay mesas registradas -->
+    <div class="col-12 text-center py-5">
+        <h4 class="text-muted">No hay mesas registradas en el sistema aún.</h4>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
