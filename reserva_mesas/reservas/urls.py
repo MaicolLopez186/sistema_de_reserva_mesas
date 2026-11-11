@@ -3,10 +3,10 @@ from django.views.generic import RedirectView
 from . import views
 
 urlpatterns = [
-    # Redirección principal
-    path('', RedirectView.as_view(url='/mesas/', permanent=True)),
+    # EL HOME AHORA ES LA PÁGINA PRINCIPAL
+    path('', views.HomeView.as_view(), name='home'),
 
-    # --- RUTAS DE MESAS ---
+    # --- RUTAS PROTEGIDAS ---
     path('mesas/', views.MesaListView.as_view(), name='mesa_list'),
     path('mesas/<int:pk>/', views.MesaDetailView.as_view(), name='mesa_detail'),
     path('mesas/crear/', views.MesaCreateView.as_view(), name='mesa_create'),
@@ -19,4 +19,6 @@ urlpatterns = [
     path('clientes/crear/', views.ClienteCreateView.as_view(), name='cliente_create'),
     path('clientes/<int:pk>/editar/', views.ClienteUpdateView.as_view(), name='cliente_update'),
     path('clientes/<int:pk>/eliminar/', views.ClienteDeleteView.as_view(), name='cliente_delete'),
+  
+    # ... (las demás rutas de clientes se quedan igual) ...
 ]
